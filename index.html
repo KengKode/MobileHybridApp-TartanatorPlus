@@ -20,7 +20,7 @@
         <div data-role="header" data-position="fixed">
             <h1>The Tartanator Plus</h1>
         </div>
-        <div data-role="header" data-theme="b" class="forrit">Bring forrit the tartan!</div>
+        <div data-role="header" data-theme="b" class="forrit" id="tagLine">Bring forrit the tartan!</div>
 
         <div data-role="content">
             <p>The Tartanator is a community-built association of groups, businesses and individuals bent on keeping the Scottish heritage alive overseas by promoting the understanding and enjoyment of <strong>tartans</strong>.</p>
@@ -49,6 +49,12 @@
     <script> 
     </script>
     -->
+
+    <script>
+    $("#homePage").live("pagebeforecreate", function(e) {
+        $("#tagLine").html("Hello Tartanian");
+    })
+    </script>
 
 </body>
 </html>

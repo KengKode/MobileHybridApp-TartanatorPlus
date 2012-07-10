@@ -44,6 +44,27 @@ _**open your JSON in simulator**: if something wrong go back and check your web 
 ###4. Binding Page Events
 
 - @index.html: Insert `<script>..</script>` before the `</body>` tag
-- Bind Page Events as follow:
+- Inside `<script>`, Bind event "pagebeforecreate" to "#homePage" and make "#tagLine" say "Hello Tartanian" or else when event is activated, like sample code below:  
+
+`$("pageName").bind("eventName", function(e) {`  
+`....$("anyElement").html("anyHTML");`  
+`})`  
+
+_**check your simulator**: TagLine should be changed_  
+
+- Bind another event "pagebeforeshow" to "#tartansPage":  
+- Make event handler work in the following sequence  
+\- Get data from "tartans.json" with `$.get("yourJSON", {}, function(res,code) {}, "json")`  
+\- Read all data and transform it into `<li>tertanName</li>` item    
+\- Put all `<li>` into "tartansList": you might use `$("#yourList")` as selector  
+\* String Concatenation migh be usefull here  
+\* Do not forget to refresh your listview with `.listview("refresh")`  
+
+_**check your progress**: you should see your tartans in Tartans page, well done guys!_ 
+
+
+
+
+
 
 
