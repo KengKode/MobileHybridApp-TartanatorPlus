@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+	<meta charset="UTF-8" />
+	<title>The Tartanator Plus</title> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CLUE #1: This should be offline -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+
+    <link href="tartans/tartans.css" />
+</head> 
+<body> 
+
+    <div data-role="page" id="homePage">
+
+        <div data-role="header" data-position="fixed">
+            <h1>The Tartanator Plus</h1>
+        </div>
+        <div data-role="header" data-theme="b" class="forrit">Bring forrit the tartan!</div>
+
+        <div data-role="content">
+            <p>The Tartanator is a community-built association of groups, businesses and individuals bent on keeping the Scottish heritage alive overseas by promoting the understanding and enjoyment of <strong>tartans</strong>.</p>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-icon="info" class="ui-btn-active ui-state-persist">About</a></li>
+                <li><a href="findevent.html" data-icon="start">Events</a></li>
+                <li><a href="tartans.html" data-icon="grid">Tartans</a></li>
+                <!-- CLUE #2B: some link might be changed after we DRY tartans.html -->
+            </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CLUE #2A: Something should be here for DRY
+    <div data-role="page" id="tartansPage">
+    </div> 
+    -->
+
+
+    <!-- CLUE #4: Binding here is a good deal
+    <script> 
+    </script>
+    -->
+
+</body>
+</html>
