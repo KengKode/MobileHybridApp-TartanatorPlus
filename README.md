@@ -54,7 +54,7 @@ _**open your JSON in simulator**: if something went wrong, check your web server
 _**check your simulator**: TagLine should be changed_  
 
 - Bind another event "pagebeforeshow" to "#tartansPage":  
-- Make event handler work in the following sequence  
+- Make event handler work in the following sequence: 
 \- Get data from "tartans.json" with `$.get("yourJSON", {}, function(res,code) {}, "json")`  
 \- In `function(res,code)`, read each response item  and generate it into:  
 `<li><a href="displayTartan.html?id={tartanID}">{tartanName}</li>`  
@@ -64,7 +64,18 @@ _**check your simulator**: TagLine should be changed_
 \* `{tartanID}` and `{tartanName}` come from each response item    
 \* Do not forget to refresh your listview with `.listview("refresh")`  
 
-_**check your progress**: you should see your tartans in Tartans page, )<eep )<oding!_ 
+_**check your progress**: you should see your tartans in Tartans page, )<eep )<oding!_   
+
+- Bind one more event "pagebeforeshow" to "#displayTartanPage":  
+- Make event handler working like this:  
+\-  
+\-    
+
+
+
+###5. Build the Builder for Ur-Own-Tartan  
+
+###6. Get the Latest Tartan
 
 
 
