@@ -23,7 +23,7 @@ _**remember that this trio comes together**: never split them out_
 ###2. DRY your code
  
 - @index.html: Combine tartans.html into index.html with `<div data-role="page" id="tartansPage">..</div>` 
-- Make `<ul>` inside `<div id="tartansPage">` childless (no `<li>`) and set its attributes as `data-role="listview"` and `id="tartansList"`  
+- Make `<ul>` inside `<div data-role="content">` childless (no `<li>`) and set its attributes as `data-role="listview"` and `id="tartansList"`  
 - Revise Tartans links `href="tartans.html"` of all footers to `="#tartansPage"`  
 
 _**check your progress**: nav bar should work and tartans page must contains no tartan_  
@@ -54,19 +54,20 @@ _**open your JSON in simulator**: if something went wrong, check your web server
 _**check your simulator**: TagLine should be changed_  
 
 - Bind another event "pagebeforeshow" to "#tartansPage":  
-- Make event handler work in the following sequence: 
+- Make event handler work in the following sequence:  
 \- Get data from "tartans.json" with `$.get("yourJSON", {}, function(res,code) {}, "json")`  
 \- In `function(res,code)`, read each response item  and generate it into:  
-`<li><a href="displayTartan.html?id={tartanID}">{tartanName}</li>`  
+`<li><a href="showtatan.html?name={tartanName}">{tartanName}</a></li>`  
+\- To show tartan thumbnail, put `<img src="tartans/icons/{tartanName}.png" alt="{tartanName}" />` inside `<a></a>`   
 \- Put all generated `<li>` into "tartansList" by using jQuery selector like this `$("#yourList")`    
 - Tips:  
 \* String Concatenation might be useful when you generate `<li>`    
-\* `{tartanID}` and `{tartanName}` come from each response item    
+\*`{tartanName}` come from each response item    
 \* Do not forget to refresh your listview with `.listview("refresh")`  
 
 _**check your progress**: you should see your tartans in Tartans page, )<eep )<oding!_   
 
-- Bind one more event "pagebeforeshow" to "#displayTartanPage":  
+- Bind one more event "pagebeforeshow" to "#showtartanPage":  
 - Make event handler working like this:  
 \-  
 \-    
