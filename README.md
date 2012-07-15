@@ -65,18 +65,22 @@ _**check your simulator**: TagLine should be changed_
 \*`{tartanName}` come from each response item    
 \* Do not forget to refresh your listview with `.listview("refresh")`  
 
-_**check your progress**: you should see your tartans in Tartans page, )<eep )<oding!_   
+_**check your progress**: you should see your tartans in Tartans page_   
 
 - Bind one more event "pagebeforeshow" to "#showtartanPage":  
 - Make event handler working like this:  
-\-  
-\-    
+\- set variable `page` to `$(this)`  
+\- extract `tartanName` from `page.data('url').split('=')[1]`  
+\- change background of the page to current tartanName with this:  
+`page.css('background-image',"url('tartans/icons/"+tartanName+".png')").page();`  
+\- updated title of the page with code:  
+'$('#tartanName', page).html(tartanName);'  
+
+_**check your progress**: you should now see your tartan image in your page_  
+
+###)<eep )<oding!
 
 
-
-###5. Build the Builder for Ur-Own-Tartan  
-
-###6. Get the Latest Tartan
 
 
 
