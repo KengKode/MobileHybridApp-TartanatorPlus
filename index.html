@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CLUE #1: This should be offline -->
-    <link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery.mobile-1.1.0.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
 
     <link href="tartans/tartans.css" />
 </head> 
@@ -37,7 +37,7 @@
             <ul>
                 <li><a href="index.html" data-icon="info" class="ui-btn-active ui-state-persist">About</a></li>
                 <li><a href="findevent.html" data-icon="start">Events</a></li>
-                <li><a href="#tartansPage" data-icon="grid">Tartans</a></li>
+                <li><a href="tartans.html" data-icon="grid">Tartans</a></li>
                 <!-- CLUE #2B: some link might be changed after we DRY tartans.html -->
             </ul>
             </div>
@@ -49,62 +49,14 @@
     <div data-role="page" id="tartansPage">
     </div> 
     -->
-    <div data-role="page" id="tartansPage">
-
-        <div data-role="header" data-position="fixed">
-          <a href="index.html" rel="prev" data-icon="back">Back</a>
-            <h1>Popular Tartans</h1>
-        </div>
-
-        <div data-role="content">   
-            <ul data-role="listview" id="tartansList">
-            </ul>
-        </div>
-
-        <div data-role="footer" data-position="fixed">
-            <div data-role="navbar">
-            <ul>
-                <li><a href="index.html" data-icon="info">About</a></li>
-                <li><a href="findevent.html" data-icon="start">Events</a></li>
-                <li><a href="#tartansPage" data-icon="grid" class="ui-btn-active">Tartans</a></li>
-            </ul>
-            </div>
-        </div>
-
-    </div>
 
 
     <!-- CLUE #4: Binding here is a good deal
     <script> 
+        // do some binding here
     </script>
     -->
-    <script>
-        $('#homePage').bind('pagebeforecreate', function(e) {
-            $('#tagLine').html('Hello Tartanian');
-        });
 
-        $('#tartansPage').live('pagebeforeshow', function(e) {
-            $.get('tartans.json', {}, function (res,code){
-                var s = '';
-                for (var i = 0; i < res.length; i++) {
-                    var img = '<img src="tartans/icons/'+res[i].name+'.png" alt="'+res[i].name+'" />';
-                    s += '<li><a href="showtartan.html?name=' + res[i].name + '">' + img + '<h3>' +res[i].name + '</h3></a></li>';
-                };
-                $('#tartansList').html(s).listview('refresh');
-            }, 'json');
-            
-        });
-
-        $("#showtartanPage").live("pagebeforeshow", function(e) {
-            console.log('showing tartan..');
-            var page = $(this);
-            var tartanName = page.data('url').split('=')[1];
-            page.css('background-image',"url('tartans/icons/"+tartanName+".png')").page();
-            $('#tartanName', page).html(tartanName);
-
-
-        });
-    </script>
 
 </body>
 </html>
